@@ -1,0 +1,13 @@
+version: "3"
+
+services:
+  frontend:
+    build:
+      dockerfile: ./docker/frontend.dockerfile
+      target: build
+    restart: unless-stopped
+    volumes:
+      - fe_node_modules:/usr/src/app/node_modules
+
+volumes:
+  fe_node_modules:
